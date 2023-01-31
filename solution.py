@@ -1,0 +1,3 @@
+def perimeter(cows, connections):
+    ...
+
