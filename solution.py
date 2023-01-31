@@ -2,6 +2,7 @@ def perimeter(cows, connections):
     groups = [] # list of sets of cows
 
     for connection in connections:
+        # for each connection, first add the cows to groups
         for group in groups:
             # if any of the cows in the connection are in the group
             if connection[0] in group or connection[1] in group:
@@ -26,7 +27,7 @@ def perimeter(cows, connections):
         if not any(cow_ind in group for group in groups):
             groups.append(set(cow_ind))
 
-    # calculate the perimeter of each group
+    # calculate the perimeter of each group based on the x/y ranges
     group_perimeters = []
     for group in groups:
         group_cows = [cows[cow_ind - 1] for cow_ind in group]
